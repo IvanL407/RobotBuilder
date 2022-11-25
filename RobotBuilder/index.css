@@ -1,0 +1,13 @@
+#title{
+    background-color: lightgray;
+    text-decoration: underline;
+    text-align: center;
+}
+.robot{
+    background-color: lightgray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10%;
+    width: 10%;
+}

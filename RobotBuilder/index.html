@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<script>
+    function initialize()
+    {
+
+    }
+</script>
+<body onload="initialize();">
+    <h1 id="title">Robot Builder</h1>
+
+    <div class="cotaine">
+        <img id="robot1" src="robot.png" alt="robot1">
+        <img id="robot2" src="robot2.jpg" alt="robot2">
+        <img id="robot3" src="robot3.png" alt="robot3">
+        <img id="robot4" src="robot4.png" alt="robot4">
+        <img id="robot5" src="robot5.jpg" alt="robot5">
+
+    </div>
+    
+
+    <br>Power Level: <span id = "power">0</span></br>
+        <button onclick = "addLevel();">
+            +
+        </button>
+        <button onclick = "subtractLevel();">
+            -
+        </button>
+    <br>Top Speed: <span id = "speed">0</span></br>
+    <button onclick = "addSpeed();">
+        +
+    </button>
+    <button onclick = "subtractSpeed();">
+        -
+    </button>
+    <br>Structural Integrity: <span id = "integrity">0</span></br>
+    <button onclick = "addIntegrity();">
+        +
+    </button>
+    <button onclick = "subtractIntegrity();">
+        -
+    </button>
+    
+    <br></br>
+    <br>Scanners: <span id = "scanners"></span>
+        <input type="checkbox">
+        <span class="slider"></span>
+    </br>
+    <br>Defensive Systems: <span id = "systems"></span>
+        <input type="checkbox">
+        <span class="slider"></span>
+    </br>
+
+    <br>Power Types: <span id = "types"></span>
+        <input type = "radio" name="power" value = "hydro">Hydro
+        <input type = "radio" name="power" value = "nuclear">Nuclear
+        <input type = "radio" name="power" value = "solar">Solar
+</body>
+</html>
