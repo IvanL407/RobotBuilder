@@ -9,9 +9,70 @@
 </head>
 
 <script>
+
     function initialize()
     {
-
+        level = 0;
+        speed = 0;
+        integrity = 0;
+        numPower = document.getElementById("power");
+        numSpeed = document.getElementById("speed");
+        numIntegrity = document.getElementById("integrity");
+    }
+    function setThumbnail(string)
+    {
+        thumbnail.src = string;
+    }
+    function addLevel(numPower)
+    {
+        level = numPower;
+        level++;
+        display();
+    }
+    function subtractLevel(numPower)
+    {
+        level = numPower - 1;
+        if (level < 0)
+        {
+            level = 0;
+        }
+        display();
+    }
+    function addSpeed(numSpeed)
+    {
+        speed = numSpeed;
+        speed++;
+        display();
+    }
+    function subtractSpeed(numSpeed)
+    {
+        speed = numSpeed - 1;
+        if (speed < 0)
+        {
+            speed = 0;
+        }
+        display();
+    }
+    function addIntegrity(numIntegrity)
+    {
+        integrity = numIntegrity;
+        integrity++;
+        display();
+    }
+    function subtractIntegrity(numIntegrity)
+    {
+        integrity = numIntegrity - 1;
+        if (integrity < 0)
+        {
+            integrity = 0;
+        }
+        display();
+    }
+    function display()
+    {
+        numPower.innerHTML = level;
+        numSpeed.innerHTML = speed;
+        numIntegrity.innerHTML = integrity;
     }
 </script>
 <body onload="initialize();">
@@ -19,35 +80,51 @@
 
     <div class="container">
         <img id="robot1" src="robot.png" alt="robot1">
+        <button onclick = "setThumbnail(robot.png);">
+            Set as Thumbnail
+        </button>
         <img id="robot2" src="robot2.jpg" alt="robot2">
+        <button onclick = "setThumbnail(robot2.png);">
+            Set as Thumbnail
+        </button>
         <img id="robot3" src="robot3.png" alt="robot3">
+        <button onclick = "setThumbnail(robot3.png);">
+            Set as Thumbnail
+        </button>
         <img id="robot4" src="robot4.png" alt="robot4">
+        <button onclick = "setThumbnail(robot4.png);">
+            Set as Thumbnail
+        </button>
         <img id="robot5" src="robot5.jpg" alt="robot5">
-
+        <button onclick = "setThumbnail(robot5.png);">
+            Set as Thumbnail
+        </button>
+    </div>
+    <div>
+        <img id="thumbnail" src="robot.png" alt="thumbnail">
     </div>
     
-
     <br>Power Level: <span id = "power">0</span></br>
-        <button onclick = "addLevel();">
+        <button onclick = "addLevel(numPower.innerHTML);">
             +
         </button>
-        <button onclick = "subtractLevel();">
+        <button onclick = "subtractLevel(numPower.innerHTML);">
             -
         </button>
     <br>Top Speed: <span id = "speed">0</span></br>
-    <button onclick = "addSpeed();">
-        +
-    </button>
-    <button onclick = "subtractSpeed();">
-        -
-    </button>
+        <button onclick = "addSpeed(numSpeed.innerHTML);">
+            +
+        </button>
+        <button onclick = "subtractSpeed(numSpeed.innerHTML);">
+            -
+        </button>
     <br>Structural Integrity: <span id = "integrity">0</span></br>
-    <button onclick = "addIntegrity();">
-        +
-    </button>
-    <button onclick = "subtractIntegrity();">
-        -
-    </button>
+        <button onclick = "addIntegrity(numIntegrity.innerHTML);">
+            +
+        </button>
+        <button onclick = "subtractIntegrity(numIntegrity.innerHTML);">
+            -
+        </button>
     
     <br></br>
     <br>Scanners: <span id = "scanners"></span>
@@ -63,5 +140,6 @@
         <input type = "radio" name="power" value = "hydro">Hydro
         <input type = "radio" name="power" value = "nuclear">Nuclear
         <input type = "radio" name="power" value = "solar">Solar
+    <br>
 </body>
 </html>
