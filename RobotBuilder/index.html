@@ -18,10 +18,13 @@
         numPower = document.getElementById("power");
         numSpeed = document.getElementById("speed");
         numIntegrity = document.getElementById("integrity");
+        const image = document.querySelector(".image");
+        
     }
-    function setThumbnail(string)
+    function setThumbnail(input)
     {
-        thumbnail.src = string;
+        thumbnail = input;
+        display();
     }
     function addLevel(numPower)
     {
@@ -73,6 +76,7 @@
         numPower.innerHTML = level;
         numSpeed.innerHTML = speed;
         numIntegrity.innerHTML = integrity;
+        image.src = thumbnail;
     }
 </script>
 <body onload="initialize();">
@@ -80,28 +84,28 @@
 
     <div class="container">
         <img id="robot1" src="robot.png" alt="robot1">
-        <button onclick = "setThumbnail(robot.png);">
+        <button onclick = "setThumbnail('robot.png');">
             Set as Thumbnail
         </button>
         <img id="robot2" src="robot2.jpg" alt="robot2">
-        <button onclick = "setThumbnail(robot2.png);">
+        <button onclick = "setThumbnail('robot2.png');">
             Set as Thumbnail
         </button>
         <img id="robot3" src="robot3.png" alt="robot3">
-        <button onclick = "setThumbnail(robot3.png);">
+        <button onclick = "setThumbnail('robot3.png');">
             Set as Thumbnail
         </button>
         <img id="robot4" src="robot4.png" alt="robot4">
-        <button onclick = "setThumbnail(robot4.png);">
+        <button onclick = "setThumbnail('robot4.png');">
             Set as Thumbnail
         </button>
         <img id="robot5" src="robot5.jpg" alt="robot5">
-        <button onclick = "setThumbnail(robot5.png);">
+        <button onclick = "setThumbnail('robot5.png');">
             Set as Thumbnail
         </button>
     </div>
     <div>
-        <img id="thumbnail" src="robot.png" alt="thumbnail">
+        <img id="image" src="blank.jpg" class="image" />
     </div>
     
     <br>Power Level: <span id = "power">0</span></br>
